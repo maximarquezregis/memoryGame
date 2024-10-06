@@ -73,7 +73,7 @@ public class Board {
     public boolean isFull() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns ; j++) {
-                if (Cards[i][j] == null) {
+                if (cards[i][j] == null) {
                     return false;
                 }
             }
