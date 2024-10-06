@@ -19,6 +19,10 @@ public class Board {
         if (rows <= 2 || columns <= 2) {
             throw new IllegalArgumentException("The board must have at least 3 rows and 3 columns");
         }
+        // if (columns * rows) is odd, the board can't have an even number of cards
+        if ((rows * columns) % 2 != 0) {
+            throw new IllegalArgumentException("The board should be able to have an even number of cards");
+        }
         this.rows = rows;
         this.columns = columns;
         this.cards = new Card[rows][columns];
@@ -78,7 +82,6 @@ public class Board {
                 }
             }
         }
-
         return true;
     }
 }
